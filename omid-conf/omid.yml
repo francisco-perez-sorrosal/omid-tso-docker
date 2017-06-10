@@ -1,0 +1,12 @@
+# Put here any overwrites to the default configuration in 'default-omid.yml'
+conflictMapSize: 1000000
+waitStrategy: LOW_CPU
+
+metrics: !!org.apache.omid.metrics.CodahaleMetricsProvider [
+    !!org.apache.omid.metrics.CodahaleMetricsConfig {
+        outputFreqInSecs: 60,
+        reporters: !!set {
+            !!org.apache.omid.metrics.CodahaleMetricsConfig$Reporter CONSOLE
+        },
+    }
+]
